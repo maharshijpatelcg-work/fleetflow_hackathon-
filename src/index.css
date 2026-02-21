@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+
+  --color-accent-50: #f0fdf4;
+  --color-accent-100: #dcfce7;
+  --color-accent-200: #bbf7d0;
+  --color-accent-300: #86efac;
+  --color-accent-400: #4ade80;
+  --color-accent-500: #22c55e;
+  --color-accent-600: #16a34a;
+  --color-accent-700: #15803d;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-400: #facc15;
+  --color-warning-500: #eab308;
+  --color-warning-600: #ca8a04;
+
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-surface-tertiary: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+  --shadow-sidebar: 4px 0 24px rgba(0, 0, 0, 0.04);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface-secondary);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+
+  /* Layout Containers */
+  .custom-app-container {
+    @apply min-h-screen p-6 lg:p-12 max-w-[1200px] mx-auto;
+  }
+
+  /* Header Styles */
+  .dispatcher-header {
+    @apply mb-12 text-left;
+  }
+
+  .dispatcher-header h1 {
+    @apply text-4xl font-black text-slate-900 tracking-tighter leading-none;
+  }
+
+  .dispatcher-header p {
+    @apply text-slate-500 font-medium text-sm mt-2 max-w-2xl;
+  }
+
+  /* Dashboard Stack */
+  .dispatcher-stack {
+    @apply space-y-8;
+  }
+
+  /* Card Sections */
+  .form-section,
+  .table-section {
+    @apply bg-white p-6 sm:p-8 rounded-2xl border border-[#e2e8f0] shadow-sm;
+  }
+
+  .section-headline {
+    @apply text-xl font-bold text-[#1e293b] mb-6 flex justify-between items-center;
+  }
+
+  .input-label {
+    @apply text-[11px] font-black text-[#94a3b8] uppercase tracking-wider block mb-3 ml-1;
+  }
+
+  /* Inputs & Selects */
+  .field-group {
+    @apply space-y-6;
+  }
+
+  .field-row {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+
+  .custom-input {
+    @apply w-full p-3 bg-slate-50 border border-[#e2e8f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all font-medium text-sm text-slate-900 placeholder:text-slate-400;
+  }
+
+  /* Primary Button */
+  .btn-submit-blue {
+    @apply w-full py-4 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold rounded-lg shadow-sm transition-all duration-200 text-sm uppercase tracking-wide cursor-pointer hover:shadow-lg hover:shadow-primary-500/30 hover:-translate-y-0.5 active:scale-[0.98];
+  }
+
+  /* Table Styles */
+  .table-outer {
+    @apply w-full overflow-x-auto;
+  }
+
+  .data-table {
+    @apply w-full text-left border-collapse;
+  }
+
+  .data-table th {
+    @apply py-4 px-4 text-[10px] font-extrabold text-[#94a3b8] uppercase tracking-widest border-b border-[#f1f5f9] bg-white;
+  }
+
+  .data-table td {
+    @apply py-5 px-4 border-b border-[#f1f5f9] text-slate-700 text-sm align-middle;
+  }
+
+  .data-table tr:last-child td {
+    @apply border-b-0;
+  }
+
+  /* Status Pills */
+  .status-badge-pill {
+    @apply px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider border inline-flex items-center;
+  }
+
+  .pill-blue {
+    @apply bg-[#eff6ff] text-[#2563eb] border-[#dbeafe];
+  }
+
+  .pill-amber {
+    @apply bg-[#fffbeb] text-[#d97706] border-[#fef3c7];
+  }
+
+  .pill-emerald {
+    @apply bg-[#f0fdf4] text-[#16a34a] border-[#dcfce7];
+  }
+
+  .pill-rose {
+    @apply bg-[#fef2f2] text-[#dc2626] border-[#fee2e2];
+  }
+
+  /* Utility Classes for Typography */
+  .text-bold-dark {
+    @apply text-[#1e293b] font-bold text-sm;
+  }
+
+  .text-muted-small {
+    @apply text-[#94a3b8] text-[11px] font-medium block mt-0.5;
+  }
+
+  /* Secondary Buttons */
+  .btn-secondary-outline {
+    @apply px-5 py-2.5 border border-slate-200 bg-white rounded-xl text-[11px] font-black text-slate-600 uppercase tracking-widest transition-all duration-200 cursor-pointer shadow-sm hover:bg-slate-50 hover:border-primary-300 hover:text-primary-600 hover:shadow-md active:scale-[0.97] flex items-center gap-2;
+  }
+}
