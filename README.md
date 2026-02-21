@@ -112,3 +112,8 @@ To build a scalable logistics management system that:
 ### 8️⃣ Operational Analytics & Reports
 
 **Metrics Include:**
+
+### 9️⃣ Netlify Deployement Link
+
+**Link - ** https://chimerical-dieffenbachia-98f5e3.netlify.app/
+
