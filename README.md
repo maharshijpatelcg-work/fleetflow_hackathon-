@@ -69,3 +69,46 @@ To build a scalable logistics management system that:
 ### 4️⃣ Trip Dispatcher
 
 **Workflow Lifecycle:**
+
+
+**Validation Rules:**
+
+- Cargo weight must not exceed vehicle capacity  
+- Driver must have a valid license  
+- Driver & vehicle must be available  
+
+---
+
+### 5️⃣ Maintenance & Service Logs
+
+- Preventative & reactive service tracking  
+- Automatically sets vehicle status to **In Shop**  
+- Removes vehicle from dispatch pool  
+
+---
+
+### 6️⃣ Fuel & Expense Tracking
+
+- Log fuel liters, cost, and date  
+
+**Operational Cost Calculation:**
+
+
+---
+
+### 7️⃣ Driver Performance & Compliance
+
+- License expiry tracking (Blocks assignment if expired)  
+- Completion rate  
+- Safety score  
+
+**Duty Status:**
+- On Duty  
+- Off Duty  
+- Suspended  
+
+---
+
+### 8️⃣ Operational Analytics & Reports
+
+**Metrics Include:**
